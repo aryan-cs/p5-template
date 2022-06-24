@@ -1,6 +1,6 @@
 function setup () {
 
-  createCanvas(Math.floor(window.innerWidth / SCALE), Math.floor(window.innerHeight / SCALE));
+  createCanvas(1200, 610);
 
 }
 
