@@ -1,0 +1,57 @@
+@font-face {
+
+  font-family: defaultFont;
+  src: url(assets/fonts/default.ttf);
+
+}
+
+:root {
+
+  --background-color: #1c1c1c;
+  --accent-1: #bababa;
+  --accent-2: #e8e8e8;
+
+}
+
+html, body {
+
+  margin: 10px;
+  padding: 0;
+  font-family: defaultFont;
+  overflow: hidden;
+  background-color: var(--background-color);
+  color: var(--accent-2);
+
+}
+
+canvas {
+
+  padding: 0;
+  margin: auto;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 10px;
+  
+}
+
+noscript {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-size: 50px;
+
+}
+
+.title {
+
+  font-size: 50px;
+  margin: 20px;
+
+}
