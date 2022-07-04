@@ -2,6 +2,7 @@
 var canvas;
 const SCALE = 1.6;
 const VARIABLE_SCALING = false;
+const WIDTH = 1200, HEIGHT = 600;
 
 function limit (value, min, max) { return Math.min(Math.max(value, min), max); }
 
@@ -13,11 +14,9 @@ window.addEventListener("resize", function (ignored) {
 
 // site
 var title = "basic template";
-var version = "version 1.0.0";
+var version = "version 1.0.3";
 
 window.onload = function () { document.title = title; document.getElementById("title").innerHTML = title + "  <span style=\"font-size: 30px;\"> " + version + "<\span>"; }
-
-var defaultMessage = "";
 
 function createInputAndButton (buttonMessage, createMessage) {
 
@@ -40,11 +39,13 @@ function createInputAndButton (buttonMessage, createMessage) {
     var message = document.createElement("p");
     message.id = "result";
     message.className = "message";
-    message.innerHTML = defaultMessage;
+    message.innerHTML = createMessage;
 
     document.getElementById("main").appendChild(message);
 
   }
+
+  return [input, button];
 
 }
 
@@ -56,6 +57,8 @@ function createCornerButton (buttonText) {
   button.addEventListener("click", cornerButtonClicked());
 
   document.getElementById("main").appendChild(button);
+
+  return button;
 
 }
 

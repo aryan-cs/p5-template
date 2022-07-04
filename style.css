@@ -59,7 +59,6 @@ noscript {
   margin: 0;
   font-size: 30px;
 
-
 }
 
 #title {
@@ -112,7 +111,7 @@ noscript {
   position: absolute;
   z-index: 2;
   padding: 15px;
-  width: 100px;
+  width: auto;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
   border-width: 0px;
@@ -139,7 +138,7 @@ noscript {
   position: absolute;
   z-index: 3;
   padding: 15px;
-  width: 200px;
+  width: auto;
   border-radius: 10px;
   outline: none;
   background-color: var(--accent-2);
