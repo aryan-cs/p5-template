@@ -14,7 +14,7 @@ window.addEventListener("resize", function (ignored) {
 
 // site
 var title = "basic template";
-var version = "version 1.0.3";
+var version = "version 1.0.5";
 
 window.onload = function () { document.title = title; document.getElementById("title").innerHTML = title + "  <span style=\"font-size: 30px;\"> " + version + "<\span>"; }
 
@@ -28,11 +28,13 @@ function createInputAndButton (buttonMessage, createMessage) {
   document.getElementById("main").appendChild(input);
 
   var button = document.createElement("button");
-  button.addEventListener("click", inputButtonClicked());
   button.className = "field_button";
+  button.id = "inputButton";
   button.textContent = buttonMessage;
 
   document.getElementById("main").appendChild(button);
+
+  document.getElementById(button.id).addEventListener("click", function () { inputButtonClicked(); });
 
   if (createMessage) {
 
@@ -53,10 +55,12 @@ function createCornerButton (buttonText) {
 
   var button = document.createElement("button");
   button.className = "corner_button";
+  button.id = "cornerButton";
   button.textContent = buttonText;
-  button.addEventListener("click", cornerButtonClicked());
 
   document.getElementById("main").appendChild(button);
+
+  document.getElementById(button.id).addEventListener("click", function () { cornerButtonClicked(); });
 
   return button;
 
