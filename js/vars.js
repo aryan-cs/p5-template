@@ -1,20 +1,20 @@
 // canvas
 var canvas;
 const SCALE = 1.6;
-const VARIABLE_SCALING = false;
-const WIDTH = 1200, HEIGHT = 600;
+const VARIABLE_SCALING = true;
+const WIDTH = window.innerWidth, HEIGHT = window.innerHeight;
 
 function limit (value, min, max) { return Math.min(Math.max(value, min), max); }
 
 window.addEventListener("resize", function (ignored) {
 
-  if (VARIABLE_SCALING) { resizeCanvas(Math.floor(limit(window.innerWidth / SCALE, 1000, 1200)), Math.floor(limit(window.innerWidth / SCALE, 580, 610))); }
+  if (VARIABLE_SCALING) { resizeCanvas(Math.floor(limit(window.innerWidth / SCALE, 1000, WIDTH)), Math.floor(limit(window.innerWidth / SCALE, 580, HEIGHT))); }
 
 }, true);
 
 // site
-var title = "p5 template";
-var version = "version X.X.X";
+var title = "Purple Bodies";
+var version = "version 0.1.3";
 
 window.onload = function () { document.title = title; document.getElementById("title").innerHTML = title + "  <span style=\"font-size: 30px;\"> " + version + "<\span>"; }
 
@@ -87,4 +87,17 @@ const ACCENT_1 = getComputedStyle(document.querySelector(":root")).getPropertyVa
 const ACCENT_2 = getComputedStyle(document.querySelector(":root")).getPropertyValue("--accent-2");
 
 // other vars
-// start here...
+var bodies = [];
+var universalZ = 0;
+var mousing = false;
+
+var presetPurples = [
+
+  "#732e8f",
+  "#722391",
+  "#870096",
+  "#aa30b8",
+  "#700a7d",
+  "#9d51a6"
+
+]
